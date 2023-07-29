@@ -2,7 +2,7 @@ import { useState } from "react"
 import Nav from "../../Components/Nav"
 import { categories } from "../../Data/Category"
 
-import { Category } from "../../Category/Category"
+import { Category } from "../../Components/Category/Category"
 
 export const Home=()=>{
  const [ShowCategory,setShowCategory]= useState(categories)
@@ -11,7 +11,7 @@ export const Home=()=>{
      <Nav/>
     {
       ShowCategory.map((categories)=>{
-       return <Category categories={categories}/>
+       return <Category categories={categories} key={categories._id}/>
       })
     }
     </div>
